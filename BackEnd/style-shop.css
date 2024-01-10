@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Nunito:wght@200;300;400;500;600;700;800;900&family=Open+Sans&family=Playfair+Display&family=Roboto&family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0px;
+}
+
+/* This is for navigation style */
+nav {
+    background-color:#D8F4EF;
+    padding: 10px 0px;
+}
+nav, .nav_link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img {
+    margin-left: 10px;
+}
+
+#nav_logo:hover {
+    opacity: 0.6;
+}
+
+.nav_link a, .nav_link img {
+    margin: 0px 20px;
+}
+.nav_link a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+    color: black;
+    text-decoration: none;
+}
+.nav_link a:hover {
+    text-decoration: underline;
+}
+.nav_link img {
+    width: 30px;
+}
+
+/*Ceci est la partie All Products*/
+#productsTitle {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+    font-weight: normal;
+    color: black;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 10px;
+    margin-top: 50px;
+}
+#productsTitle::before {
+    content: "";
+    display: block;
+    width: 50px;
+    border-top: 2px solid black;
+    margin: 5px auto;
+}
+.products {
+    display: none;
+    grid-template: repeat(3,280px)/repeat(4,210px);
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 50px auto;
+}
+.display {
+    display:grid;
+}
+.products_element {
+    position: relative;
+    background-color: #D8F4EF;
+    border-radius: 10px;
+    width: 210px;
+    height: 280px;
+    padding: 20px;
+}
+.products_element:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.5);
+}
+.products_image {
+    position: absolute;
+    top: 45px;
+    left:0px;
+    transform: rotate(-30deg);
+    width: 210px;
+}
+.shape_data {
+    position: absolute;
+    bottom: 20px;
+}
+.shape_data h2, .shape_data h3 {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+}
+.shape_data h2 {
+    margin: 10px auto;
+}
+.shape_data h3 {
+    margin: auto;
+}
+#AddToCart {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+.fleche_droite {
+    width: 30px;
+    transform: translateY(10px) translateX(5px);
+}
+#AddToCart:hover .fleche_droite {
+    transform: translateY(10px) translateX(10px);
+}
+.index {
+    text-align: center;
+    margin: 50px auto;
+}
+.index span {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.3em;
+    border: 1px solid black;
+    background-color: white;
+    letter-spacing: 1px;
+    margin: 10px;
+    padding: 5px 10px
+}
+.index span:hover {
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+}
+
+/*Ceci est pour la partie footer*/
+footer {
+    margin-top: 200px;
+}
+footer section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    width: 80%;
+    margin: auto;
+}
+footer section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: #333333;
+    margin: 0px 20px;
+}
+footer section div h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    margin: 20px 0px;
+}
+footer section div a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    margin: 5px 0px;
+    color: #333333;
+    text-decoration: none;
+}
+footer section div:nth-child(4) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto 20px;
+}
+footer section div:nth-child(4) img {
+    width: 30px;
+    margin: 10px;
+}
+footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    color: #333333;
+    text-align: center;
+    margin: 100px 0px;
+    opacity: 0.75;
+}
+
+
+
+@media only screen and (max-width: 1140px) {
+    /*Ceci est pour la partie All Products*/
+    .products {
+        grid-template: repeat(4,280px)/repeat(3,210px);
+    }
+}
+@media only screen and (max-width:768px){
+    /*Ceci est pour la partie navigation*/
+    nav, .nav_link {
+        flex-direction: column;
+    }
+    .nav_link {
+        margin: 30px auto;
+    }
+    .nav_link a {
+        margin-bottom: 5px;
+    }
+    /*Ceci est pour la partie All Products*/
+    .products {
+        grid-template: repeat(6,280px)/repeat(2,210px);
+    }
+    /*Ceci est pour la partie footer*/
+    footer section div:nth-child(4) {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+}

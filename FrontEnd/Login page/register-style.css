@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Styles pour l'élément de sélection dans Select2 */
+.select2-container--default .select2-selection--single {
+    background-color: transparent !important; /* Couleur de fond personnalisée */
+    border: none !important; /* Bordure personnalisée */
+}
+
+/* Styles pour le texte du placeholder dans Select2 */
+.select2-container .select2-selection--single .select2-selection__placeholder {
+    color: #fff !important; /* Couleur du texte du placeholder */
+}
+
+/* Styles pour le texte de la valeur sélectionnée dans Select2 avec une spécificité plus élevée */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #fff !important; /* Couleur du texte de la valeur sélectionnée */
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    display: none;
+}
+
+/* Styles pour le conteneur de la flèche dans Select2 */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    display: flex;
+    background-color: transparent !important; /* Couleur de fond personnalisée */
+    color: #fff; /* Couleur de la flèche */
+    border: none !important; /* Supprimer la bordure de la flèche */
+    width: 16px; /* Largeur de la flèche */
+    height: 16px; /* Hauteur de la flèche */
+    margin-right: 8px; /* Ajuster la marge si nécessaire */
+    position: relative;
+    transition: transform 0.3s ease; /* Ajoutez une transition pour l'effet de transformation */
+}
+
+/* Créer une flèche personnalisée avec un pseudélement ::after */
+.select2-container--default .select2-selection--single .select2-selection__arrow::after {
+    content: '\25BC'; /* Code Unicode pour la flèche vers le bas */
+    font-size: 14px; /* Taille de la police de la flèche */
+    line-height: 1.5; /* Ajuster la ligne en fonction de la taille de la flèche */
+    transition: transform 0.3s ease; /* Ajoutez une transition pour l'effet de transformation */
+}
+
+/* Styles pour la flèche lorsqu'elle est ouverte (effet de transformation verticale) */
+.select2-container--open .select2-selection--single .select2-selection__arrow {
+    transform: scaleY(-1);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url('bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: animateBg 5s linear infinite;
+}
+@keyframes animateBg {
+    100% {
+        filter: hue-rotate(360deg)
+    }
+}
+.register_box {
+    position: relative;
+    width: 400px;
+    height: auto;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+}
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.name_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.name_box div {
+    position: relative;
+    width: 140px;
+    margin-top: 50px;
+    border-bottom: 2px solid #fff;
+}
+.name_box div label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+.name_box div input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+.name_box div:nth-child(1) {
+    margin-right: 30px;
+}
+.name_box div input:focus~label,
+.name_box div input:valid~label {
+    top: -5px;
+}
+.input_box {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+    
+}
+.input_box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+.input_box input:focus~label,
+.input_box input:valid~label {
+    top: -5px;
+}
+.input_box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+.custom_select {
+    width: 315px;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 15px;
+}
+.input_box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+.terms_service {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.terms_service label input {
+    margin: 3px;
+}
+.terms_service a {
+    color: #fff;
+    text-decoration: none;
+}
+.terms_service a:hover {
+    text-decoration: underline;
+}
+button {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+}
+button:hover {
+    opacity: .5;
+}
+.login_link {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+.login_link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login_link p a:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width: 360px) {
+    .register_box {
+        width: 100%;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+    }
+    .input_box {
+        width: 290px;
+    }
+}
